@@ -1,3 +1,2 @@
-function getCurrentURL() {
-  return window.location.href;
-}
+const url = window.location.href;
+console.log(url);
