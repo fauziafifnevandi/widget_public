@@ -3,7 +3,7 @@ const url = window.location.href;
 console.log(url);
 
 var d1 = document.querySelectorAll(
-  'div[class$="post-body entry-content float-container"]'
+  'div[class$="entry-content pagelayer-post-excerpt"]'
 );
 d1.forEach(function (item) {
   var sound = document.createElement("audio");
