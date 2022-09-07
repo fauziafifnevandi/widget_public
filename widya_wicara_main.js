@@ -1,3 +1,4 @@
+console.log("aku fauzi");
 const url = window.location.href;
 console.log(url);
 
