@@ -7,7 +7,7 @@ var myRequest = new Request("http://127.0.0.1:8008/audio_widget?url_source="+url
 fetch(myRequest).then(function(response) {
   if (response.status != "501"){      
   var ifr = document.querySelectorAll(
-    'div[class$="post-body entry-content float-container"]'
+    'div[class$="entry-content pagelayer-post-excerpt"]'
   );
   ifr.forEach(function (item) {
     var iframe_elm = document.createElement("iframe");
