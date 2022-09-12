@@ -5,7 +5,7 @@ console.log(ifr_s);
 console.log("awdhhuwas1");
 fetch(myRequest).then(function(response) {
     if (response.status != "501") {
-        var ifr = document.querySelectorAll(ifr_s);
+        var ifr = document.querySelectorAll('div[class$="post-body entry-content float-container"]');
         console.log(ifr_s);
         ifr.forEach(function(item) {
             var iframe_elm = document.createElement("iframe");
