@@ -1,6 +1,6 @@
 const url = window.location.href;
 var api_endpoint = "http://127.0.0.1:8008/audio_widget_api";
-var myRequest = new Request("api_endpoint"+?url_source="+url);
+var myRequest = new Request("api_endpoint"+"?url_source="+url);
 
 fetch(myRequest).then(function(response) {
   if (response.status != "501"){      
@@ -11,7 +11,7 @@ fetch(myRequest).then(function(response) {
     var iframe_elm = document.createElement("iframe");
     iframe_elm.width = "100%";
     iframe_elm.id = "iframe-audio-widget-widya-wicara"    
-    iframe_elm.src ="api_endpoint"+?url_source="+url;
+    iframe_elm.src ="api_endpoint"+"?url_source="+url;
     iframe_elm.frameBorder="0";
     iframe_elm.scrolling="no";
     iframe_elm.allowfullscreen="";
