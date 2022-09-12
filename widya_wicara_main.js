@@ -2,28 +2,30 @@ console.log("aku fauzi");
 const url = window.location.href;
 console.log(url);
 
-var d1 = document.querySelectorAll(
-  'div[class$="entry-content pagelayer-post-excerpt"]'
-);
-d1.forEach(function (item) {
-  var sound = document.createElement("audio");
-  sound.id = "audio-player";
-  sound.controls = "controls";
-  sound.src =
-    "https://widya-tts-audio.s3.ap-southeast-3.amazonaws.com/WDYSTTDEV001/f19c953d1598200496d97d3979a6e2ada449756d46dfd45b92f13bb27b678a4eefa3e4b627a4d360faaaa97d5dbce9f3_S0.wav";
-  sound.type = "audio/mpeg";
-  item.prepend(sound);
+var myRequest = new Request("http://127.0.0.1:8008/audio_widget?url_source="+url);
+
+fetch(myRequest).then(function(response) {
+  if (response.status != "501"){      
+  var ifr = document.querySelectorAll(
+    'div[class$="post-body entry-content float-container"]'
+  );
+  ifr.forEach(function (item) {
+    var iframe_elm = document.createElement("iframe");
+    iframe_elm.width = "100%";
+    iframe_elm.id = "iframe-audio-widget-widya-wicara"
+    // iframe_elm.src ="http://127.0.0.1:8008/audio_widget?audio_url=https://widya-tts-audio.s3.ap-southeast-3.amazonaws.com/andreganteng/e9a5fdd22e264f902a35bc75952acefd0738d001168932edfab85f353809e9f56060c570a67b95bc2b76f37f4d05d188_S0_Widya.wav";
+    iframe_elm.src ="http://127.0.0.1:8008/audio_widget?url_source="+url;
+    iframe_elm.frameBorder="0";
+    iframe_elm.scrolling="no";
+    iframe_elm.allowfullscreen="";
+    iframe_elm.hidden="";
+    iframe_elm.onload="frameload()";
+    item.prepend(iframe_elm);
+  });
+
+  }  
+}).catch(function(error) {
+  console.log("error");
 });
 
-// var div = document.createElement("div");
-// div.innerHTML = "Hello";
-// div.id = "widget-widya";
 
-// document.querySelector(".post-body-container").appendChild(div);
-
-// var html = [];
-// html.push(
-//   "<audio controls> \n  <source src=https://widya-tts-audio.s3.ap-southeast-3.amazonaws.com/andreganteng/153c2ece9a0c5b180d986c0fd19022493220a3b784beb7ae48b64fe85a3cb528cc648b0f9e94e141951a06b0f9e8b18b_S0_Widya.wav>  </audio>"
-// );
-
-// document.getElementById("widget-widya").innerHTML = html.join("");
