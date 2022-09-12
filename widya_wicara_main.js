@@ -1,7 +1,7 @@
 const url = window.location.href;
 var api_endpoint = "http://127.0.0.1:8008/audio_widget_api";
 var myRequest = new Request(api_endpoint+"?url_source="+url);
-
+console.log("awdhhuwa");
 fetch(myRequest).then(function(response) {
   if (response.status != "501"){      
   var ifr = document.querySelectorAll(ifr_s);
