@@ -4,9 +4,7 @@ var myRequest = new Request(api_endpoint+"?url_source="+url);
 
 fetch(myRequest).then(function(response) {
   if (response.status != "501"){      
-  var ifr = document.querySelectorAll(
-    ifr_s
-  );
+  var ifr = document.querySelectorAll(ifr_s);
   ifr.forEach(function (item) {
     var iframe_elm = document.createElement("iframe");
     iframe_elm.width = "100%";
