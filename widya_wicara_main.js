@@ -1,12 +1,10 @@
 const url = window.location.href;
 var api_endpoint = "http://127.0.0.1:8008/audio_widget_api";
 var myRequest = new Request(api_endpoint + "?url_source=" + url);
-console.log(ifr_s);
 console.log("awdhhuwas1");
 fetch(myRequest).then(function(response) {
     if (response.status != "501") {
         var ifr = document.querySelectorAll('div[class$="post-body entry-content float-container"]');
-        console.log(ifr_s);
         ifr.forEach(function(item) {
             var iframe_elm = document.createElement("iframe");
             iframe_elm.width = "100%";
