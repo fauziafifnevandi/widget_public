@@ -1,4 +1,4 @@
-var url = "https://tts-crawling.widyawicara.dev/api/v1/process?user_account_id=andreganteng&pitch=1&speed=1&languageCode=Id&speaker=Teguh&url_source=https%3A%2F%2Fandrepradika.blogspot.com%2F2022%2F09%2Fidxchannel-ikatan-dokter-anak-indonesia.html&mode=auto&widget=enable";
+var url = "https://tts-crawling.widyawicara.dev/process?user_account_id=andreganteng&pitch=1&speed=1&languageCode=Id&speaker=Teguh&url_source=https%3A%2F%2Fandrepradika.blogspot.com%2F2022%2F09%2Fidxchannel-ikatan-dokter-anak-indonesia.html&mode=auto&widget=enable";
 
 var xhr = new XMLHttpRequest();
 xhr.open("POST", url);
